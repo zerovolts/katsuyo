@@ -1,0 +1,19 @@
+{
+  "name": "katsuyo",
+  "version": "1.0.0",
+  "description": "Japanese text transformation utilies for inflection and conversion.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerovolts/katsuyo.git"
+  },
+  "author": "Zach Stone <zach@zerovolts.com> (http://zerovolts.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zerovolts/katsuyo/issues"
+  },
+  "homepage": "https://github.com/zerovolts/katsuyo#readme"
+}
