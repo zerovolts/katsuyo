@@ -13,3 +13,9 @@ const Katsuyo = require("katsuyo")
 console.log(Katsuyo.toKana("ohayougozaimasu!")
 // "おはようございます！"
 ```
+
+## Features
+- ~Romaji to Hiragana~ Katsuyo.toKana(romaji)
+- Hiragana to Romaji
+- Hiragana to Katakana
+- Katakana to Hiragana

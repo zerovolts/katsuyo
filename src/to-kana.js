@@ -3,24 +3,38 @@ const kanaMap = require("./kana-map")
 const consonants = "kgsztdcnhfbpmyrw"
 const vowels = "aiueo"
 
+// おな：ona
+// おんあ：onna / on'a / on a
+// おんな：onnna / on'na / on na
+
 const toKana = (romaji) => {
   let splitRomaji = []
   let currentKana = ""
 
   for (let i = 0; i < romaji.length; i++) {
-    if (consonants.includes(romaji[i])) {
-      currentKana += romaji[i]
-      if (currentKana == "n") {
+    // check for "nn", "n'", and "n "
+    if (currentKana === "n") {
+      if (romaji[i] === "n" || romaji[i] === "'" || romaji[i] === " ") {
         splitRomaji.push(currentKana)
-        currentKana = "" 
+        currentKana = ""
+        // "n" will also pass the consonant test, so it must be skipped
+        continue
       }
+    }
+    if (consonants.includes(romaji[i])) {
+      // consonants always have a vowel after them, so don't push to the list yet
+      currentKana += romaji[i]
     } else {
       currentKana += romaji[i]
       splitRomaji.push(currentKana)
       currentKana = ""
     }
   }
+
+  // pushes an empty string to the end unless you are halfway through writing a kana
+  // (i.e., you have typed a consonant without a vowel)
   splitRomaji.push(currentKana)
+
   return splitRomaji.map(c => kanaMap[c] ? kanaMap[c] : c).join("")
 }
 
