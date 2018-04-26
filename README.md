@@ -15,7 +15,14 @@ console.log(Katsuyo.toKana("ohayougozaimasu!")
 ```
 
 ## Features
-- ~Romaji to Hiragana~ Katsuyo.toKana(romaji)
-- Hiragana to Romaji
-- Hiragana to Katakana
-- Katakana to Hiragana
+`toKana(romaji)`
+- Given a string of Roman characters (rōmaji), returns the same string in Hiragana.
+
+`isHiragana(kana)`
+- returns `true` if the character given is Hiragana. Checks only the first character if given a multi-character string.
+
+`isKatakana(kana)`
+- returns `true` if the character given is Katakana. Checks only the first character if given a multi-character string.
+
+`kanaPercentages(text)`
+- returns a Hash of percentages of Hiragana, Katakana, and other characters in a given string.
