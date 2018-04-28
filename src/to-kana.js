@@ -1,11 +1,7 @@
 const kanaMap = require("./kana-map")
 
-const consonants = "kgsztdcnhfbpmyrw"
+const consonants = "kgsztdcnhfbpvmyrwl"
 const vowels = "aiueo"
-
-// おな：ona
-// おんあ：onna / on'a / on a
-// おんな：onnna / on'na / on na
 
 const toKana = (romaji) => {
   let splitRomaji = []
@@ -22,6 +18,10 @@ const toKana = (romaji) => {
       }
     }
     if (consonants.includes(romaji[i])) {
+      if (currentKana == romaji[i]) {
+        splitRomaji.push("ltu") // check for っ
+        currentKana = ""
+      }
       // consonants always have a vowel after them, so don't push to the list yet
       currentKana += romaji[i]
     } else {
