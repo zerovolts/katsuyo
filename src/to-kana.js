@@ -1,6 +1,6 @@
 const kanaMap = require("./kana-map")
 
-const consonants = "kgsztdcnhfbpvmyrwl"
+const consonants = "kgszjtdcnhfbpvmyrwl"
 const vowels = "aiueo"
 
 const toKana = (romaji) => {
