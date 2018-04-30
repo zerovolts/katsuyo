@@ -26,3 +26,6 @@ console.log(Katsuyo.toKana("ohayougozaimasu!")
 
 `kanaPercentages(text)`
 - returns a Hash of percentages of Hiragana, Katakana, and other characters in a given string.
+
+`changeVowel(kana, vowel)`
+- returns a kana of the same group with the given vowel.

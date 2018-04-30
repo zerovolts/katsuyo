@@ -39,8 +39,26 @@ const kanaPercentages = (text) => {
   }
 }
 
+const groups = [
+  "あいうえお",
+  "かきくけこ",
+  "さしすせそ",
+  "たちつてと",
+  "なにぬねの",
+  "はひふへほ",
+  "まみむめも",
+  "らりるれろ" //TODO: やわ
+]
+
+const changeVowel = (kana, vowel) => {
+  const vowelIndex = "aiueoあいうえお".indexOf(vowel) % 5
+  const kanaGroup = groups.filter(group => group.includes(kana))[0]
+  return kanaGroup[vowelIndex]
+}
+
 module.exports = {
   isHiragana,
   isKatakana,
-  kanaPercentages
+  kanaPercentages,
+  changeVowel
 }

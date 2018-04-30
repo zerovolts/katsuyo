@@ -1,6 +1,6 @@
 {
   "name": "katsuyo",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Japanese text transformation utilies for inflection and conversion.",
   "main": "index.js",
   "scripts": {
