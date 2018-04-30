@@ -1,3 +1,5 @@
+const kanaMap = require("./kana-map")
+
 const isHiragana = (kana) => {
   const firstCodePoint = 12352
   const lastCodePoint = 12447
@@ -11,6 +13,43 @@ const isKatakana = (kana) => {
   const lastCodePoint = 12543
   const codePoint = kana.codePointAt(0)
   return (codePoint >= firstCodePoint && codePoint <= lastCodePoint )
+}
+
+const consonants = "kgszjtdcnhfbpvmyrwl"
+const vowels = "aiueo"
+const toKana = (romaji) => {
+  let splitRomaji = []
+  let currentKana = ""
+
+  for (let i = 0; i < romaji.length; i++) {
+    // check for "nn", "n'", and "n "
+    if (currentKana === "n") {
+      if (romaji[i] === "n" || romaji[i] === "'" || romaji[i] === " ") {
+        splitRomaji.push(currentKana)
+        currentKana = ""
+        // "n" will also pass the consonant test, so it must be skipped
+        continue
+      }
+    }
+    if (consonants.includes(romaji[i])) {
+      if (currentKana == romaji[i]) {
+        splitRomaji.push("ltu") // check for っ
+        currentKana = ""
+      }
+      // consonants always have a vowel after them, so don't push to the list yet
+      currentKana += romaji[i]
+    } else {
+      currentKana += romaji[i]
+      splitRomaji.push(currentKana)
+      currentKana = ""
+    }
+  }
+
+  // pushes an empty string to the end unless you are halfway through writing a kana
+  // (i.e., you have typed a consonant without a vowel)
+  splitRomaji.push(currentKana)
+
+  return splitRomaji.map(c => kanaMap[c] ? kanaMap[c] : c).join("")
 }
 
 // returns {hiragana: 78.2, katakana: 13.5, other: 8.3}
@@ -57,6 +96,7 @@ const changeVowel = (kana, vowel) => {
 }
 
 module.exports = {
+  toKana,
   isHiragana,
   isKatakana,
   kanaPercentages,

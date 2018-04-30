@@ -1,4 +1,4 @@
-const toPast = (verb) => {
+const godanToPast = (verb) => {
   const root = verb.slice(0, -1)
   const last = verb.slice(-1)
   switch (last) {
@@ -19,4 +19,4 @@ const toPast = (verb) => {
   }
 }
 
-module.exports = { toPast }
+module.exports = { godanToPast }
