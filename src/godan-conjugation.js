@@ -1,3 +1,5 @@
+const { changeVowel } = require("./kana-utils")
+
 const godanToPast = (verb) => {
   const root = verb.slice(0, -1)
   const last = verb.slice(-1)
@@ -19,4 +21,14 @@ const godanToPast = (verb) => {
   }
 }
 
-module.exports = { godanToPast }
+const godanToNegative = (verb) => {
+  const root = verb.slice(0, -1)
+  const last = verb.slice(-1)
+
+  if (last === "う") {
+    return root + "わない"
+  }
+  return root + changeVowel(last, "あ") + "ない"
+}
+
+module.exports = { godanToPast, godanToNegative }

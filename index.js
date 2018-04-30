@@ -1,5 +1,5 @@
-const { ichidanToPast } = require("./src/ichidan-conjugation")
-const { godanToPast } = require("./src/godan-conjugation")
+const { ichidanToPast, ichidanToNegative } = require("./src/ichidan-conjugation")
+const { godanToPast, godanToNegative } = require("./src/godan-conjugation")
 const {
   toKana,
   isHiragana,
@@ -15,7 +15,9 @@ const Katsuyo = {
   kanaPercentages,
   changeVowel,
   ichidanToPast,
-  godanToPast
+  ichidanToNegative,
+  godanToPast,
+  godanToNegative
 }
 
 module.exports = Katsuyo

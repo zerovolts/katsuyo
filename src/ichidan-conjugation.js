@@ -3,4 +3,9 @@ const ichidanToPast = (verb) => {
   return root + "た"
 }
 
-module.exports = { ichidanToPast }
+const ichidanToNegative = (verb) => {
+  const root = verb.slice(0, -1)
+  return root + "ない"
+}
+
+module.exports = { ichidanToPast, ichidanToNegative }
