@@ -1,6 +1,7 @@
 const WordTypes = require("./word-types")
 const { ichidanConjugate } = require("./ichidan-conjugation")
 const { godanConjugate } = require("./godan-conjugation")
+const { keiyoushiConjugate } = require("./keiyoushi-conjugation")
 
 const inflectStep = (word) => {
   switch (word.category) {
@@ -8,9 +9,17 @@ const inflectStep = (word) => {
       return ichidanConjugate(word)
     case WordTypes.VERB_GODAN:
       return godanConjugate(word)
+    case WordTypes.ADJECTIVE_KEIYOUSHI:
+      return keiyoushiConjugate(word)
     default:
       return word
   }
 }
 
-module.exports = inflectStep
+const inflect = (word) => {
+  return word.inflections.length <= 0
+    ? word
+    : inflect(inflectStep(word))
+}
+
+module.exports = inflect
