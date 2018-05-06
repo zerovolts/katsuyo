@@ -1,4 +1,5 @@
 const { changeVowel } = require("./kana-utils")
+const InflectionTypes = require("./inflection-types")
 
 const godanToPast = (verb) => {
   const root = verb.slice(0, -1)
@@ -31,4 +32,26 @@ const godanToNegative = (verb) => {
   return root + changeVowel(last, "あ") + "ない"
 }
 
-module.exports = { godanToPast, godanToNegative }
+const godanConjugateByInflection = (word, inflection) => {
+  switch (inflection) {
+    case InflectionTypes.PAST:
+      return godanToPast(word)
+    case InflectionTypes.NEGATIVE:
+      return godanToNegative(word)
+    default:
+      return word
+  }
+}
+
+const godanConjugate = (word) => {
+  const inflection = word.inflections[word.inflections.length - 1]
+  const restInflections = word.inflections.slice(0, -1)
+
+  return {
+    ...word,
+    word: godanConjugateByInflection(word.word, inflection),
+    inflections: restInflections
+  }
+}
+
+module.exports = { godanConjugate, godanToPast, godanToNegative }

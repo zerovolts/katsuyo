@@ -1,5 +1,6 @@
-const { ichidanToPast, ichidanToNegative } = require("./src/ichidan-conjugation")
-const { godanToPast, godanToNegative } = require("./src/godan-conjugation")
+const inflectStep = require("./src/inflector")
+const InflectionTypes = require("./src/inflection-types")
+const WordTypes = require("./src/word-types")
 const {
   toKana,
   isHiragana,
@@ -9,15 +10,14 @@ const {
 } = require("./src/kana-utils")
 
 const Katsuyo = {
+  inflectStep,
   toKana,
   isHiragana,
   isKatakana,
   kanaPercentages,
   changeVowel,
-  ichidanToPast,
-  ichidanToNegative,
-  godanToPast,
-  godanToNegative
 }
 
 module.exports = Katsuyo
+
+console.log(inflectStep({word: "聞く", category: WordTypes.VERB_GODAN, inflections: [InflectionTypes.PAST]}))
