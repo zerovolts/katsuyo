@@ -42,4 +42,4 @@ const ichidanConjugate = (word) => {
   }
 }
 
-module.exports = { ichidanConjugate, ichidanToPast, ichidanToNegative }
+module.exports = { ichidanConjugate, ichidanToPast, ichidanToNegative, ichidanToDesire }
