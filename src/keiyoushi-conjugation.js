@@ -36,4 +36,4 @@ const keiyoushiConjugate = (word) => {
   }
 }
 
-module.exports = { keiyoushiConjugate }
+module.exports = { keiyoushiConjugate, keiyoushiToPast, keiyoushiToNegative }
