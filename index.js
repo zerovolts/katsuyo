@@ -16,6 +16,8 @@ const Katsuyo = {
   isKatakana,
   kanaPercentages,
   changeVowel,
+  WordTypes,
+  InflectionTypes
 }
 
 module.exports = Katsuyo
