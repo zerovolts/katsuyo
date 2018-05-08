@@ -78,6 +78,7 @@ const kanaPercentages = (text) => {
   }
 }
 
+//TODO: やわ?
 const groups = [
   "あいうえお",
   "かきくけこ",
@@ -86,7 +87,13 @@ const groups = [
   "なにぬねの",
   "はひふへほ",
   "まみむめも",
-  "らりるれろ" //TODO: やわ
+  "らりるれろ",
+
+  "がぎぐげご",
+  "ざじずぜぞ",
+  "だぢづでど",
+  "ばびぶべぼ",
+  "ぱぴぷぺぽ"
 ]
 
 const changeVowel = (kana, vowel) => {

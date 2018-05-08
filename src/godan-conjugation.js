@@ -65,4 +65,4 @@ const godanConjugate = (word) => {
   }
 }
 
-module.exports = { godanConjugate, godanToPast, godanToNegative }
+module.exports = { godanConjugate, godanToPast, godanToNegative, godanToDesire }
