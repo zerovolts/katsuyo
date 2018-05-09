@@ -1,4 +1,4 @@
-import WordTypes from "./word-types"
+import { WordTypes } from "./word-types"
 import { ichidanConjugate } from "./ichidan"
 import { godanConjugate } from "./godan"
 import { keiyoushiConjugate } from "./keiyoushi"

@@ -1,4 +1,4 @@
-const kanaMap = Object.freeze({
+export const kanaMap = Object.freeze({
   "a": "あ",
   "i": "い",
   "u": "う",
@@ -189,5 +189,3 @@ const kanaMap = Object.freeze({
   "fe": "ふぇ",
   "fo": "ふぉ",
 })
-
-export default kanaMap

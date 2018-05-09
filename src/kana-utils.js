@@ -1,4 +1,4 @@
-import kanaMap from "./kana-map"
+import { kanaMap } from "./kana-map"
 
 export const isHiragana = (kana) => {
   const firstCodePoint = 12352

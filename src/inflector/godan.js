@@ -1,6 +1,6 @@
 import { changeVowel } from "../kana-utils"
-import InflectionTypes from "./inflection-types"
-import WordTypes from "./word-types"
+import { InflectionTypes } from "./inflection-types"
+import { WordTypes } from "./word-types"
 
 export const godanToPast = (verb) => {
   const root = verb.slice(0, -1)

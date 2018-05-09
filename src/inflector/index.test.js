@@ -1,8 +1,8 @@
 import { test } from "ava"
 
 import { inflect } from "./index"
-import WordTypes from "./word-types"
-import InflectionTypes from "./inflection-types"
+import { WordTypes } from "./word-types"
+import { InflectionTypes } from "./inflection-types"
 
 const miru = {
   word: "見る",
