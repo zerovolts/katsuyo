@@ -1,10 +1,11 @@
 {
   "name": "katsuyo",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Japanese text transformation utilies for inflection and conversion.",
-  "main": "index.js",
+  "main": "lib/katsuyo.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/zerovolts/katsuyo#readme",
   "devDependencies": {
-    "ava": "1.0.0-beta.4"
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "ava": "1.0.0-beta.4",
+    "babel-loader": "^8.0.0-beta.2",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
   }
 }

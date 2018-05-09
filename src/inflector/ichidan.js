@@ -1,5 +1,5 @@
-const InflectionTypes = require("./inflection-types")
-const WordTypes = require("./word-types")
+import InflectionTypes from "./inflection-types"
+import WordTypes from "./word-types"
 
 const ichidanToPast = (verb) => {
   const root = verb.slice(0, -1)

@@ -1,6 +1,6 @@
-const { changeVowel } = require("./kana-utils")
-const InflectionTypes = require("./inflection-types")
-const WordTypes = require("./word-types")
+import { changeVowel } from "../kana-utils"
+import InflectionTypes from "./inflection-types"
+import WordTypes from "./word-types"
 
 const keiyoushiToPast = (word) => {
   const root = word.slice(0, -1)

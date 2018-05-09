@@ -1,6 +1,6 @@
-const { test } = require("ava")
+import { test } from "ava"
 
-const { ichidanToPast, ichidanToNegative, ichidanToDesire } = require("./ichidan-conjugation")
+import { ichidanToPast, ichidanToNegative, ichidanToDesire } from "./ichidan"
 
 test("conjugates to past", t => {
   t.is(ichidanToPast("見る"), "見た")

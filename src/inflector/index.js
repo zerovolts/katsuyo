@@ -1,7 +1,7 @@
-const WordTypes = require("./word-types")
-const { ichidanConjugate } = require("./ichidan-conjugation")
-const { godanConjugate } = require("./godan-conjugation")
-const { keiyoushiConjugate } = require("./keiyoushi-conjugation")
+import WordTypes from "./word-types"
+import { ichidanConjugate } from "./ichidan"
+import { godanConjugate } from "./godan"
+import { keiyoushiConjugate } from "./keiyoushi"
 
 const inflectStep = (word) => {
   switch (word.category) {

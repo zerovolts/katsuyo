@@ -1,6 +1,6 @@
-const { test } = require("ava")
+import { test } from "ava"
 
-const { godanToPast, godanToNegative, godanToDesire } = require("./godan-conjugation")
+import { godanToPast, godanToNegative, godanToDesire } from "./godan"
 
 // The examples cover all 9 types of Godan verb ending, as they conjugate in different ways.
 // うるつぬむぶくぐす

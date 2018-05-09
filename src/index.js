@@ -1,13 +1,13 @@
-const inflect = require("./src/inflector")
-const InflectionTypes = require("./src/inflection-types")
-const WordTypes = require("./src/word-types")
-const {
+import inflect from "./inflector"
+import InflectionTypes from "./inflector/inflection-types"
+import WordTypes from "./inflector/word-types"
+import {
   toKana,
   isHiragana,
   isKatakana,
   kanaPercentages,
   changeVowel
-} = require("./src/kana-utils")
+} from "./kana-utils"
 
 const Katsuyo = {
   inflect,

@@ -1,6 +1,6 @@
-const { test } = require("ava")
+import { test } from "ava"
 
-const { keiyoushiToPast, keiyoushiToNegative } = require("./keiyoushi-conjugation")
+import { keiyoushiToPast, keiyoushiToNegative } from "./keiyoushi"
 
 test("conjugates to past", t => {
   t.is(keiyoushiToPast("怖い"), "怖かった")

@@ -1,6 +1,6 @@
-const { test } = require("ava")
+import { test } from "ava"
 
-const { isHiragana, isKatakana, toKana, changeVowel } = require("./kana-utils")
+import { isHiragana, isKatakana, toKana, changeVowel } from "./kana-utils"
 
 const hiraganaSamples = "あいうえおがぎぐげごぱぴぷぺぽっぁぃぅぇぉゐゑ".split("")
 const katakanaSamples = "アイウエオガギグゲゴパピプペポッァィゥェォヰヱ".split("")

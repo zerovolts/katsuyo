@@ -1,4 +1,4 @@
-const kanaMap = require("./kana-map")
+import kanaMap from "./kana-map"
 
 const isHiragana = (kana) => {
   const firstCodePoint = 12352
