@@ -2,7 +2,7 @@ import { changeVowel } from "../kana-utils"
 import InflectionTypes from "./inflection-types"
 import WordTypes from "./word-types"
 
-const godanToPast = (verb) => {
+export const godanToPast = (verb) => {
   const root = verb.slice(0, -1)
   const last = verb.slice(-1)
   switch (last) {
@@ -23,7 +23,7 @@ const godanToPast = (verb) => {
   }
 }
 
-const godanToNegative = (verb) => {
+export const godanToNegative = (verb) => {
   const root = verb.slice(0, -1)
   const last = verb.slice(-1)
 
@@ -33,7 +33,7 @@ const godanToNegative = (verb) => {
   return root + changeVowel(last, "あ") + "ない"
 }
 
-const godanToDesire = (verb) => {
+export const godanToDesire = (verb) => {
   const root = verb.slice(0, -1)
   const last = verb.slice(-1)
   return root + changeVowel(last, "い") + "たい"
@@ -52,7 +52,7 @@ const godanConjugateByInflection = (word, inflection) => {
   }
 }
 
-const godanConjugate = (word) => {
+export const godanConjugate = (word) => {
   const inflection = word.inflections[word.inflections.length - 1]
   const restInflections = word.inflections.slice(0, -1)
   const inflectedWord = godanConjugateByInflection(word.word, inflection)
@@ -64,5 +64,3 @@ const godanConjugate = (word) => {
     inflections: restInflections
   }
 }
-
-module.exports = { godanConjugate, godanToPast, godanToNegative, godanToDesire }

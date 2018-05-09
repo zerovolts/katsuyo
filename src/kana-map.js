@@ -190,4 +190,4 @@ const kanaMap = Object.freeze({
   "fo": "ふぉ",
 })
 
-module.exports = kanaMap
+export default kanaMap

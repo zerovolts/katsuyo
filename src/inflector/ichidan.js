@@ -1,17 +1,17 @@
 import InflectionTypes from "./inflection-types"
 import WordTypes from "./word-types"
 
-const ichidanToPast = (verb) => {
+export const ichidanToPast = (verb) => {
   const root = verb.slice(0, -1)
   return root + "た"
 }
 
-const ichidanToNegative = (verb) => {
+export const ichidanToNegative = (verb) => {
   const root = verb.slice(0, -1)
   return root + "ない"
 }
 
-const ichidanToDesire = (verb) => {
+export const ichidanToDesire = (verb) => {
   const root = verb.slice(0, -1)
   return root + "たい"
 }
@@ -29,7 +29,7 @@ const ichidanConjugateByInflection = (word, inflection) => {
   }
 }
 
-const ichidanConjugate = (word) => {
+export const ichidanConjugate = (word) => {
   const inflection = word.inflections[word.inflections.length - 1]
   const restInflections = word.inflections.slice(0, -1)
   const inflectedWord = ichidanConjugateByInflection(word.word, inflection)
@@ -41,5 +41,3 @@ const ichidanConjugate = (word) => {
     inflections: restInflections
   }
 }
-
-module.exports = { ichidanConjugate, ichidanToPast, ichidanToNegative, ichidanToDesire }

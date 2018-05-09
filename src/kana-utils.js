@@ -1,6 +1,6 @@
 import kanaMap from "./kana-map"
 
-const isHiragana = (kana) => {
+export const isHiragana = (kana) => {
   const firstCodePoint = 12352
   const lastCodePoint = 12447
   const codePoint = kana.codePointAt(0)
@@ -8,7 +8,7 @@ const isHiragana = (kana) => {
 }
 
 // offset +96
-const isKatakana = (kana) => {
+export const isKatakana = (kana) => {
   const firstCodePoint = 12448
   const lastCodePoint = 12543
   const codePoint = kana.codePointAt(0)
@@ -17,7 +17,7 @@ const isKatakana = (kana) => {
 
 const consonants = "kgszjtdcnhfbpvmyrwl"
 const vowels = "aiueo"
-const toKana = (romaji) => {
+export const toKana = (romaji) => {
   let splitRomaji = []
   let currentKana = ""
 
@@ -53,7 +53,7 @@ const toKana = (romaji) => {
 }
 
 // returns {hiragana: 78.2, katakana: 13.5, other: 8.3}
-const kanaPercentages = (text) => {
+export const kanaPercentages = (text) => {
   const total = text.length
   const counts = {
     hiragana: 0,
@@ -96,16 +96,8 @@ const groups = [
   "ぱぴぷぺぽ"
 ]
 
-const changeVowel = (kana, vowel) => {
+export const changeVowel = (kana, vowel) => {
   const vowelIndex = "aiueoあいうえお".indexOf(vowel) % 5
   const kanaGroup = groups.filter(group => group.includes(kana))[0]
   return kanaGroup[vowelIndex]
-}
-
-module.exports = {
-  toKana,
-  isHiragana,
-  isKatakana,
-  kanaPercentages,
-  changeVowel
 }

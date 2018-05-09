@@ -2,12 +2,12 @@ import { changeVowel } from "../kana-utils"
 import InflectionTypes from "./inflection-types"
 import WordTypes from "./word-types"
 
-const keiyoushiToPast = (word) => {
+export const keiyoushiToPast = (word) => {
   const root = word.slice(0, -1)
   return root + "かった"
 }
 
-const keiyoushiToNegative = (word) => {
+export const keiyoushiToNegative = (word) => {
   const root = word.slice(0, -1)
   return root + "くない"
 }
@@ -23,7 +23,7 @@ const keiyoushiConjugateByInflection = (word, inflection) => {
   }
 }
 
-const keiyoushiConjugate = (word) => {
+export const keiyoushiConjugate = (word) => {
   const inflection = word.inflections[word.inflections.length - 1]
   const restInflections = word.inflections.slice(0, -1)
   const inflectedWord = keiyoushiConjugateByInflection(word.word, inflection)
@@ -35,5 +35,3 @@ const keiyoushiConjugate = (word) => {
     inflections: restInflections
   }
 }
-
-module.exports = { keiyoushiConjugate, keiyoushiToPast, keiyoushiToNegative }

@@ -16,10 +16,8 @@ const inflectStep = (word) => {
   }
 }
 
-const inflect = (word) => {
+export const inflect = (word) => {
   return word.inflections.length <= 0
     ? word
     : inflect(inflectStep(word))
 }
-
-module.exports = inflect

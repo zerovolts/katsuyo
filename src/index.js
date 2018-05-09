@@ -20,7 +20,7 @@ const Katsuyo = {
   InflectionTypes
 }
 
-module.exports = Katsuyo
+export default Katsuyo
 
 const example = {
   word: "見る",
