@@ -5,7 +5,10 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "lib"),
-    filename: "katsuyo.js"
+    filename: "katsuyo.js",
+    library: "katsuyo",
+    libraryTarget: "umd",
+    globalObject: "this" // replaces the reference to window: https://github.com/webpack/webpack/issues/6642
   },
   module: {
     rules: [{
